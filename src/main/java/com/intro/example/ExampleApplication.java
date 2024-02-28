@@ -1,15 +1,8 @@
 package com.intro.example;
-import com.fasterxml.jackson.core.json.JsonReadFeature;
-import netscape.javascript.JSObject;
-import org.apache.tomcat.util.json.JSONParser;
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.json.JacksonJsonParser;
-import org.springframework.boot.json.JsonParser;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -61,7 +54,7 @@ public class ExampleApplication {
 		System.out.println("" + latitude);
 
 		//returning map with position to the client
-		String website = "<p>Where is ISS?</p><iframe width=\"425\" height=\"350\" src=\"https://www.openstreetmap.org/export/embed.html?bbox=-558.2812500000001%2C-88.70033392584459%2C582.1875000000001%2C89.87529106709619&amp;layer=mapnik&amp;marker="+latitude+"%2C"+longitude+"\" style=\"border: 1px solid black\"></iframe>";
+		String website = "<p>Where is ISS?</p><iframe width=\"425\" height=\"350\" src=\"https://www.openstreetmap.org/export/embed.html?bbox=-558.2812500000001%2C-88.70033392584459%2C582.1875000000001%2C89.87529106709619&amp;layer=mapnik&amp;marker="+latitude+"%2C"+longitude+"\" style=\"border: 1px solid black\"></iframe></br><button onclick=location.href=\"/\">Reset</button>";
 		return website;
 	}
 
